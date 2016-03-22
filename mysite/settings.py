@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'catcolony',
     'embed_video',
+    'taggit',
 ]
 
 MIDDLEWARE_CLASSES = [

@@ -9,6 +9,10 @@ def post_list(request):
     posts = Item.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'catcolony/post_list.html', {'posts': posts})
 
+def cutetag(request):
+    posts = Item.objects.filter(tags=['cute'])
+    return render(request, 'catcolony/post_list.html', {'posts': posts})
+
 def post_new(request):
     if request.method == "POST":
         form = ItemForm(request.POST)
