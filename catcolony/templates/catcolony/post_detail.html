@@ -1,0 +1,15 @@
+{% extends 'catcolony/base.html' %}
+{% load embed_video_tags %}
+
+{% block content %}
+    <div class="post">
+        {% if post.published_date %}
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+        {% endif %}
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.text|linebreaks }}</p>
+        {% video post.video 'small' %}
+    </div>
+{% endblock %}
